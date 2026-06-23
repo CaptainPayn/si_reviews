@@ -1,0 +1,57 @@
+  test command checks for file types and compare values
+  0 if true
+  1 if false
+
+  - Test if a given variable is equal to a given string:    
+    test "$MY_VAR" = "/bin/zsh"
+
+  - Test if a given variable is empty ([z]ero length):
+    test -z "$GIT_BRANCH"
+
+  - Test if a [f]ile exists:
+    test -f "path/to/file_or_directory"
+
+  - Test if a [d]irectory does not exist:
+    test ! -d "path/to/directory"
+
+  - If A is true, then do B, or C in the case of an error (notice that C may run even if A fails):
+    test condition && echo "true" || echo "false"
+
+  - Use test in a conditional statement:
+    if test -f "path/to/file"; then echo "File exists"; else echo "File does not exist"; fi
+
+
+  [ ] square brackets
+  Check file types and compare values.  Returns a status of 0 if the condition evaluates to true, 1 if it evaluates to false.  See also: `test`.  More information: https://gnu.org/software/bash/manual/bash.html#index-test.
+
+  - Test if a given variable is equal to the specified string:
+    [ "$variable" = "string" ]
+
+  - Test if a given variable is not equal to the specified string:
+    [ "$variable" != "string" ]
+
+  - Test if a given variable is [eq]ual/[n]ot [e]qual/[g]reater [t]han/[l]ess [t]han/[g]reater than or [e]qual/[l]ess than or [e]qual to the specified number:
+    [ "$variable" -eq|ne|gt|lt|ge|le integer ]
+
+  - Test if the specified variable has a [n]on-empty value:
+    [ -n "$variable" ]
+
+  - Test if the specified variable has an empty value ([z]ero length):
+    [ -z "$variable" ]
+
+  - Test if the specified [f]ile exists:
+    [ -f path/to/file ]
+
+  - Test if the specified [d]irectory exists:
+    [ -d path/to/directory ]
+
+  - Test if the specified file or directory [e]xists:
+    [ -e path/to/file_or_directory ]
+
+
+special parameters $? $# $@ $0-9
+$? exit status of previous command
+$# number of parameters passed
+$@ all parameters passed
+$0 name of the script
+$1 through $9 are positional parameters passed to script
