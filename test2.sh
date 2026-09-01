@@ -1,7 +1,7 @@
 #!/bin/bash
 
-read -p "Without -r switch: " VAR1
+read -p "read without -r switch: " VAR1
 echo "$VAR1"
 
-read -rp "With -r switch: " VAR2
+read -rp "read with -r switch: " VAR2
 echo "$VAR2"
